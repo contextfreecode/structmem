@@ -1,3 +1,4 @@
+#include <initializer_list>
 #include <iostream>
 #include <memory>
 #include <vector>
@@ -27,7 +28,9 @@ auto report_changes(Seq a) -> void {
 auto main() -> int {
     auto a = Seq {
         .id = 5,
-        .vals = std::make_shared<std::vector<int>>(std::vector { 6, 7 }),
+        .vals = std::make_shared<std::vector<int>>(
+            std::initializer_list { 6, 7 }
+        ),
     };
     report_changes(a);
 }
