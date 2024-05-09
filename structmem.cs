@@ -9,9 +9,9 @@ struct Seq {
 
 class Program {
     [MethodImpl(MethodImplOptions.NoInlining)]
-    static Seq UppedId(Seq sequence) {
-        sequence.Id += 1;
-        return sequence;
+    static Seq UppedId(Seq seq) {
+        seq.Id += 1;
+        return seq;
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
