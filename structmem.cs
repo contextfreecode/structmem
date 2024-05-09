@@ -24,5 +24,6 @@ class Program {
 	static void Main() {
         var a = new Seq { Id = 5, Vals = new List<int> { 6, 7 } };
         ReportChanges(a);
+        // Console.WriteLine(a.Vals[0]);
     }
 }

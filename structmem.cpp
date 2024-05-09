@@ -33,4 +33,5 @@ auto main() -> int {
         ),
     };
     report_changes(a);
+    // print(a.vals->at(0));
 }
