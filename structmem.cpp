@@ -15,7 +15,7 @@ auto upped_id(Seq seq) -> Seq {
 }
 
 __attribute__((noinline))
-auto report(Seq seq) -> void {
+auto report(const Seq& seq) -> void {
     std::cout << seq.id << " has " << seq.vals->size() << "\n";
 }
 
