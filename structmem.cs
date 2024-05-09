@@ -15,10 +15,16 @@ class Program {
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
+    static void Report(Seq seq) {
+        Console.WriteLine($"{seq.Id} has {seq.Vals.Count}");
+    }
+
+    [MethodImpl(MethodImplOptions.NoInlining)]
     static void ReportChanges(Seq a) {
         var b = UppedId(a);
-        Console.WriteLine(a.Id);
-        Console.WriteLine(b.Id);
+        a.Vals.Add(0);
+        Report(a);
+        Report(b);
     }
 
 	static void Main() {

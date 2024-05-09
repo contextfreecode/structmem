@@ -3,10 +3,6 @@
 #include <memory>
 #include <vector>
 
-auto print(int i) -> void {
-    std::cout << i << "\n";
-}
-
 struct Seq {
     int id;
     std::shared_ptr<std::vector<int>> vals;
@@ -19,10 +15,16 @@ auto upped_id(Seq seq) -> Seq {
 }
 
 __attribute__((noinline))
+auto report(Seq seq) -> void {
+    std::cout << seq.id << " has " << seq.vals->size() << "\n";
+}
+
+__attribute__((noinline))
 auto report_changes(Seq a) -> void {
     auto b = upped_id(a);
-    print(a.id);
-    print(b.id);
+    a.vals->push_back(0);
+    report(a);
+    report(b);
 }
 
 auto main() -> int {
@@ -33,5 +35,4 @@ auto main() -> int {
         ),
     };
     report_changes(a);
-    // print(a.vals->at(0));
 }
